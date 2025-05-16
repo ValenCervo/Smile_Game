@@ -1,3 +1,17 @@
+body{
+  background-image: url("https://preview.redd.it/o2mnvoh3eut21.png?width=1920&format=png&auto=webp&s=9380f9779c765447e7f7b9bdde92bd4a4e6086bf") !important;
+}
+
+h1{
+  font-family: 'Satisfy', cursive;
+  font-size: 80px;
+}
+
+h3{
+  font-family: 'Satisfy', cursive;
+  font-size: 40px;
+}
+
 .invisivel{
     display:none;
   }
@@ -5,16 +19,19 @@
     display:inline;
   }
   .inicial {
+    position: relative;
     text-align: center;
     font-size: 100px;
-    background-color: lightgrey;
+    background-color: rgb(253, 142, 201);
     width: 150px;
     height: 200px;
-    border: 15px solid green;
+    border: 15px solid rgb(237, 52, 175);
     padding: 10px;
     margin: 20px;
   }
+  
   .acertou {
+    position: relative;
     text-align: center;
     color: yellow;
     background-color: LawnGreen;
@@ -25,6 +42,8 @@
     margin: 20px;
   }
   .errou {
+    position: relative;
+    display: flex;
     text-align: center;
     font-size: 100px;
     color: white;
@@ -35,3 +54,56 @@
     padding: 10px;
     margin: 20px;
   }
+
+  .imgSmile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110px;
+    height: auto;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* para não atrapalhar cliques futuros */
+  }
+
+  .botao{
+    width: 200px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: rgb(255, 255, 116);
+  }
+
+  .confeteee{
+    bottom: 10px;
+    right: 20px;
+    position: fixed;
+  }
+
+  .confetee{
+    left: 20px;
+    position: fixed;
+    bottom: 10px;
+  }
+
+  @keyframes acertoAnimado {
+  0% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-20px) scale(1.1); }
+  60% { transform: translateY(10px) scale(0.95); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes erroAnimado {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Adiciona animações às classes existentes */
+.acertou {
+  animation: acertoAnimado 0.6s ease;
+}
+
+.errou {
+  animation: erroAnimado 0.5s ease;
+}
